@@ -1,0 +1,131 @@
+{
+  "$id": "http://json-schema.org/editorconfig-defaults",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "EditorConfig Defaults",
+  "type": "object",
+  "definitions": {
+    "codeStyleObject": {
+        "properties": {
+            "description": {
+              "description": "",
+              "type": "string"
+            },
+            "editorconfig": {
+              "$ref": "#/definitions/editorConfigObject",
+              "description": ""
+            },
+            "reference": {
+              "description": "",
+              "type": "string"
+            }
+        },
+        "required": [
+          "editorconfig",
+          "reference"
+        ]
+    },
+    "editorConfigObject": {
+      "properties": {
+        "end_of_line": {
+          "description": "",
+          "type": "string"
+        },
+        "indent_size": {
+          "description": "",
+          "type": "integer"
+        },
+        "indent_style": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": []
+    },
+    "flavorsObject": {
+      "properties": {
+        "convention": {
+          "$ref": "#/definitions/codeStyleObject",
+          "description": ""
+        },
+        "standard": {
+          "$ref": "#/definitions/codeStyleObject",
+          "description": ""
+        }
+      },
+      "required": []
+    },
+    "languageObject": {
+      "properties": {
+        "comment": {
+          "description": "",
+          "type": "string"
+        },
+        "description": {
+          "description": "",
+          "type": "string"
+        },
+        "flavors": {
+          "$ref": "#/definitions/flavorsObject",
+          "description": ""
+        }
+      },
+      "required": [
+        "description",
+        "flavors"
+      ]
+    },
+    "matchesObject": {
+      "properties": {
+        "*.cs": {
+          "$ref": "#/definitions/languageObject",
+          "description": ""
+        },
+        "*.js": {
+          "$ref": "#/definitions/languageObject",
+          "description": ""
+        },
+        "*.py": {
+          "$ref": "#/definitions/languageObject",
+          "description": ""
+        },
+        "*.{yml,yaml}": {
+          "$ref": "#/definitions/languageObject",
+          "description": ""
+        },
+        "{*.{csproj,vcxproj,vcxproj.user}}": {
+          "$ref": "#/definitions/languageObject",
+          "description": ""
+        },
+        "{Makefile,*.mak}": {
+          "$ref": "#/definitions/languageObject",
+          "description": ""
+        }
+      },
+      "required": [
+        "*.cs",
+        "*.js",
+        "*.py",
+        "*.{yml,yaml}",
+        "{*.{csproj,vcxproj,vcxproj.user}}",
+        "{Makefile,*.mak}"
+      ]
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "description": "",
+      "type": "string"
+    },
+    "matches": {
+      "$ref": "#/definitions/matchesObject",
+      "description": ""
+    },
+    "version": {
+      "description": "",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version"
+  ]
+}

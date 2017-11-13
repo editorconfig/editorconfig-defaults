@@ -1,0 +1,118 @@
+{
+  "schema_version": "0.1",
+  "version": "0.1.0",
+  "matches": {
+
+    "*.{yml,yaml}": {
+      "description": "YAML",
+      "flavors": {
+        "standard": {
+          "description": "YAML Specification 1.2",
+          "comment": "indent_size based on common use",
+          "reference": "http://www.yaml.org/spec/1.2/spec.html#Syntax",
+          "editorconfig": {
+            "indent_style": "space",
+            "indent_size": 2
+          }
+        }
+      }
+    },
+
+    "*.js": {
+      "description": "JavaScript",
+      "flavors": {
+        "mozilla": {
+          "description": "Mozilla Developer Guide Coding Style",
+          "reference": "https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style",
+          "editorconfig": {
+            "indent_style": "space",
+            "indent_size": 2,
+            "trim_trailing_spaces": true,
+            "end_of_line": "lf",
+            "max_line_length": 80
+          }
+        },
+        "jquery": {
+          "description": "jQuery Style Guide",
+          "reference": "https://contribute.jquery.org/style-guide/js",
+          "editorconfig": {
+            "indent_style": "tab",
+            "indent_size": 4,
+            "trim_trailing_spaces": true,
+            "max_line_length": 100
+          }
+        },
+        "node-felix": {
+          "description": "Felix's Node.js Style Guide",
+          "reference": "https://github.com/felixge/node-style-guide",
+          "editorconfig": {
+            "indent_style": "space",
+            "indent_size": 2,
+            "trim_trailing_spaces": true,
+            "insert_final_newline": true,
+            "end_of_line": "lf",
+            "charset": "utf-8",
+            "max_line_length": 80
+          }
+        }
+      }
+    },
+
+    "{Makefile,*.mak}": {
+      "description": "Make",
+      "flavors": {
+        "standard": {
+          "comment": "Make only works with tab indentation",
+          "reference": "https://www.gnu.org/software/make/manual/make.html",
+          "editorconfig": {
+            "indent_style": "tab"
+          }
+        }
+      }
+    },
+
+    "*.py": {
+      "description": "Python",
+      "flavors": {
+        "pep-8": {
+          "description": "PEP 8 - Style Guide for Python Code",
+          "reference": "https://www.python.org/dev/peps/pep-0008/",
+          "editorconfig": {
+            "indent_style": "space",
+            "indent_size": 4,
+            "trim_trailing_spaces": true,
+            "max_line_length": 80
+          }
+        }
+      }
+    },
+
+    "*.cs": {
+      "description": "C#",
+      "flavors": {
+        "convention": {
+          "description": "Microsoft suggested code convention",
+          "reference": "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions",
+          "editorconfig": {
+            "indent_style": "space",
+            "indent_size": 4
+          }
+        }
+      }
+    },
+
+    "{*.{csproj,vcxproj,vcxproj.user}}": {
+      "description": "Visual Studio Project Files",
+      "comment": "List of extensions is incomplete",
+      "flavors": {
+        "common": {
+          "editorconfig": {
+            "indent_style": "space",
+            "indent_size": 2,
+            "end_of_line": "crlf"
+          }
+        }
+      }
+    }
+  }
+}

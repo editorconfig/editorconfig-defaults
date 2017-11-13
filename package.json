@@ -1,0 +1,36 @@
+{
+  "name": "editorconfig-defaults",
+  "version": "0.5.0",
+  "description": "Set of useful default EditorConfig settings",
+  "author": "EditorConfig community",
+  "license": "",
+  "homepage": "http://editorconfig.org/defaults/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/editorconfig/editorconfig-defaults.git"
+  },
+  "bugs": {
+    "url": "https://github.com/editorconfig/editorconfig-defaults/issues"
+  },
+  "keywords": [
+    "editorconfig",
+    "defaults"
+  ],
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.0.0"
+  },
+  "contributors": [],
+  "scripts": {
+    "lint:editorconfig": "eclint check *.json *.js",
+    "lint:json": "ajv validate -s editorconfig-defaults.schema.json -d editorconfig-defaults.json",
+    "lint:package": "pjv --recommendations --warnings",
+    "lint": "npm run lint:package && npm run lint:json && npm run lint:editorconfig"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ajv-cli": "^2.1.0",
+    "eclint": "^2.5.0",
+    "package-json-validator": "^0.6.2"
+  }
+}
