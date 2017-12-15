@@ -1,12 +1,13 @@
 {
   "schema_version": "0.1",
   "version": "0.1.0",
-  "matches": {
-
-    "*.{yml,yaml}": {
+  "matches": [
+    {
+      "match": "*.{yml,yaml}",
       "description": "YAML",
-      "flavors": {
-        "standard": {
+      "flavors": [
+        {
+          "flavor": "standard",
           "description": "YAML Specification 1.2",
           "comment": "indent_size based on common use",
           "reference": "http://www.yaml.org/spec/1.2/spec.html#Syntax",
@@ -15,13 +16,15 @@
             "indent_size": 2
           }
         }
-      }
+      ]
     },
 
-    "*.js": {
+    {
+      "match": "*.js",
       "description": "JavaScript",
-      "flavors": {
-        "mozilla": {
+      "flavors": [
+        {
+          "flavor": "mozilla",
           "description": "Mozilla Developer Guide Coding Style",
           "reference": "https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style",
           "editorconfig": {
@@ -32,7 +35,8 @@
             "max_line_length": 80
           }
         },
-        "jquery": {
+        {
+          "flavor": "jquery",
           "description": "jQuery Style Guide",
           "reference": "https://contribute.jquery.org/style-guide/js",
           "editorconfig": {
@@ -42,7 +46,8 @@
             "max_line_length": 100
           }
         },
-        "node-felix": {
+        {
+          "flavor": "node-felix",
           "description": "Felix's Node.js Style Guide",
           "reference": "https://github.com/felixge/node-style-guide",
           "editorconfig": {
@@ -55,26 +60,30 @@
             "max_line_length": 80
           }
         }
-      }
+      ]
     },
 
-    "{Makefile,*.mak}": {
+    {
+      "match": "{Makefile,*.mak}",
       "description": "Make",
-      "flavors": {
-        "standard": {
+      "flavors": [
+        {
+          "flavor": "standard",
           "comment": "Make only works with tab indentation",
           "reference": "https://www.gnu.org/software/make/manual/make.html",
           "editorconfig": {
             "indent_style": "tab"
           }
         }
-      }
+      ]
     },
 
-    "*.py": {
+    {
+      "match": "*.py",
       "description": "Python",
-      "flavors": {
-        "pep-8": {
+      "flavors": [
+        {
+          "flavor": "pep-8",
           "description": "PEP 8 - Style Guide for Python Code",
           "reference": "https://www.python.org/dev/peps/pep-0008/",
           "editorconfig": {
@@ -84,13 +93,15 @@
             "max_line_length": 80
           }
         }
-      }
+      ]
     },
 
-    "*.cs": {
+    {
+      "match": "*.cs",
       "description": "C#",
-      "flavors": {
-        "convention": {
+      "flavors": [
+        {
+          "flavor": "convention",
           "description": "Microsoft suggested code convention",
           "reference": "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions",
           "editorconfig": {
@@ -98,21 +109,23 @@
             "indent_size": 4
           }
         }
-      }
+      ]
     },
 
-    "{*.{csproj,vcxproj,vcxproj.user}}": {
+    {
+      "match": "{*.{csproj,vcxproj,vcxproj.user}}",
       "description": "Visual Studio Project Files",
       "comment": "List of extensions is incomplete",
-      "flavors": {
-        "common": {
+      "flavors": [
+        {
+          "flavor": "common",
           "editorconfig": {
             "indent_style": "space",
             "indent_size": 2,
             "end_of_line": "crlf"
           }
         }
-      }
+      ]
     }
-  }
+  ]
 }

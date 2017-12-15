@@ -4,128 +4,116 @@
   "title": "EditorConfig Defaults",
   "type": "object",
   "definitions": {
-    "codeStyleObject": {
+    "matchesObject": {
         "properties": {
-            "description": {
-              "description": "",
-              "type": "string"
-            },
-            "editorconfig": {
-              "$ref": "#/definitions/editorConfigObject",
-              "description": ""
-            },
-            "reference": {
-              "description": "",
-              "type": "string"
+          "match": {
+            "description": "The regular expression to match",
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "flavors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/flavorsObject"
             }
+          }
         },
         "required": [
-          "editorconfig",
-          "reference"
+          "match",
+          "description",
+          "flavors"
         ]
+    },
+    "flavorsObject": {
+      "properties": {
+        "flavor": {
+          "description": "The name of the flavor",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "reference": {
+          "description": "The URL where the flavor is described",
+          "type": "string"
+        },
+        "editorconfig": {
+          "$ref": "#/definitions/editorConfigObject"
+        }
+      },
+      "required": [
+        "flavor",
+        "editorconfig"
+      ]
     },
     "editorConfigObject": {
       "properties": {
         "end_of_line": {
           "description": "",
-          "type": "string"
+          "type": "string",
+          "enum": [ "cr", "lf", "crlf" ]
         },
         "indent_size": {
           "description": "",
-          "type": "integer"
+          "type": "integer",
+          "minimum": 1
+        },
+        "tab_width": {
+          "description": "",
+          "type": "integer",
+          "minimum": 1
         },
         "indent_style": {
           "description": "",
-          "type": "string"
+          "type": "string",
+          "enum": [ "space", "tab" ]
+        },
+        "trim_trailing_spaces": {
+          "description": "",
+          "type": "boolean"
+        },
+        "insert_final_newline": {
+          "description": "",
+          "type": "boolean"
+        },
+        "charset": {
+          "description": "",
+          "type": "string",
+          "enum": [ "latin1", "utf-8", "utf-8-bom", "utf-16be", "utf-16le" ]
+        },
+        "max_line_length": {
+          "description": "",
+          "type": "integer"
         }
       },
       "required": []
-    },
-    "flavorsObject": {
-      "properties": {
-        "convention": {
-          "$ref": "#/definitions/codeStyleObject",
-          "description": ""
-        },
-        "standard": {
-          "$ref": "#/definitions/codeStyleObject",
-          "description": ""
-        }
-      },
-      "required": []
-    },
-    "languageObject": {
-      "properties": {
-        "comment": {
-          "description": "",
-          "type": "string"
-        },
-        "description": {
-          "description": "",
-          "type": "string"
-        },
-        "flavors": {
-          "$ref": "#/definitions/flavorsObject",
-          "description": ""
-        }
-      },
-      "required": [
-        "description",
-        "flavors"
-      ]
-    },
-    "matchesObject": {
-      "properties": {
-        "*.cs": {
-          "$ref": "#/definitions/languageObject",
-          "description": ""
-        },
-        "*.js": {
-          "$ref": "#/definitions/languageObject",
-          "description": ""
-        },
-        "*.py": {
-          "$ref": "#/definitions/languageObject",
-          "description": ""
-        },
-        "*.{yml,yaml}": {
-          "$ref": "#/definitions/languageObject",
-          "description": ""
-        },
-        "{*.{csproj,vcxproj,vcxproj.user}}": {
-          "$ref": "#/definitions/languageObject",
-          "description": ""
-        },
-        "{Makefile,*.mak}": {
-          "$ref": "#/definitions/languageObject",
-          "description": ""
-        }
-      },
-      "required": [
-        "*.cs",
-        "*.js",
-        "*.py",
-        "*.{yml,yaml}",
-        "{*.{csproj,vcxproj,vcxproj.user}}",
-        "{Makefile,*.mak}"
-      ]
     }
   },
   "properties": {
+    "version": {
+      "type": "string"
+    },
     "schema_version": {
-      "description": "",
       "type": "string"
     },
     "matches": {
-      "$ref": "#/definitions/matchesObject",
-      "description": ""
-    },
-    "version": {
-      "description": "",
-      "type": "string"
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/matchesObject"
+      }
     }
   },
   "required": [
-    "schema_version"
+    "schema_version",
+    "version",
+    "matches"
   ]
 }
