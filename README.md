@@ -8,12 +8,14 @@ Description of the file format
 {
   "file_format": "1.0",
   "version":"0.1.0",
-  "matches": {
-    "<<matcher>>": {
+  "matches": [
+    {
+      "match": "<<pattern_to_match>>",
       "description": "<<description>>",
       "comment": "<<comment>>",
-      "flavors": {
-        "<<flavor>>": {
+      "flavors": [
+        {
+          "flavor": "<<flavor_name>>",
           "description": "<<description>>",
           "comment": "<<comment>>",
           "reference": "<<reference>>",
@@ -21,18 +23,18 @@ Description of the file format
             "<<setting>>": "<<value>>"
           }
         }
-      }
+      ]
     }
-  }
+  ]
 }
 ```
 
 Where
 
-* `matcher` stands for the default files-glob the section defines; the format 
+* `match` stands for the default files-glob the section defines; the format 
   should allow to use it to filter the defaults based on a list of files. 
   This is what goes between `[` and `]` in the editorconfig-file.
-* `flavors` stands for the given flavor name; it should be used to let the 
+* `flavor` stands for the given flavor name; it should be used to let the 
   user choose the preferred style; the using tool might omit showing it if 
   there is only one flavor (f.e. `common` or `convention`) for the section.
 * `setting` and `value` are the editorconfig-settings for that flavor; 
