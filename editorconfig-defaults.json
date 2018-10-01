@@ -3,6 +3,21 @@
   "version": "0.1.0",
   "matches": {
 
+    "*.{md,rmd,mkd,mkdn,mdwn,mdown,markdown,litcoffee}": {
+      "description": "Markdown",
+      "comment": "List of extensions from https://github.com/github/markup/blob/9fe05362ecd3ea5257b1699a3f3d09a0d6c3f646/lib/github/markup/markdown.rb#L32",
+      "flavors": {
+        "standard": {
+          "description": "CommonMark Spec",
+          "comment": "tabs behave as if they were replaced by spaces with a tab stop of 4 characters",
+          "reference": "https://spec.commonmark.org/0.28/#tabs",
+          "editorconfig": {
+            "tab_width": 4
+          }
+        }
+      }
+    },
+
     "*.{yml,yaml}": {
       "description": "YAML",
       "flavors": {
