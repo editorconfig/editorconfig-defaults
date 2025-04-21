@@ -4,7 +4,7 @@
   "description": "Set of useful default EditorConfig settings",
   "author": "EditorConfig community",
   "license": "",
-  "homepage": "http://editorconfig.org/defaults/",
+  "homepage": "https://editorconfig.org/defaults/",
   "repository": {
     "type": "git",
     "url": "https://github.com/editorconfig/editorconfig-defaults.git"
